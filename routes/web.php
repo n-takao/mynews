@@ -18,7 +18,7 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('news/create', 'Admin\NewsController@add');
 });
 // PHP/Laravel09の課題、４
-Route::groupe(['prefix'=> 'admin'], function() {
+Route::group(['prefix'=> 'admin'], function() {
     Route::get('profile/create','Admin\ProfileController@add');
     Route::get('profile/edit','Admin\ProfileController@edit');
 });
