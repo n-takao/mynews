@@ -2,15 +2,30 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="x-ua-Compayible" content="IE=edge">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta http-equiv="x-ua-Compayible" content="IE=sdge">
+        <meta name="viewport" content="width=device-width,inital-scale=1">
         
         
-        <title>My create</title>
+        <title>My プロフィール作成画面</title>
     </head>
     <body>
-        <h1>create作成画面</h1>
-        
+        {{-- layouts/admin.blade.phpを読み込む --}}
+@extends('layouts.admin')
+
+
+{{-- admin.blade.phpの@yield('title')に'プロフィールの新規作成'を埋め込む --}}
+@section('title', 'My プロフィールの新規作成')
+
+{{-- admin.blade.phpの@yield('content')に以下のタグを埋め込む --}}
+@section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <h2>My プロフィール</h2>
+            </div>
+        </div>
+    </div>
+@endsection
     </body>
 </html>
 <!--課題１Viewは何をするところでしょうか。簡潔に説明してみてください。
