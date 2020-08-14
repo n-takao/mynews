@@ -1,11 +1,11 @@
 <?php
-// PHP/Laravel08の課題
+// PHP/Laravelの課題
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\profile;
+use App\Profile;
 
 class ProfileController extends Controller
 {
