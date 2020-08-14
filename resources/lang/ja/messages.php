@@ -1,8 +1,8 @@
 <?php
 
-return[
+return [
     'Login' => 'ログイン',
-    'E-mail address' => 'メールアドレス',
+    'E-Mail Address' => 'メールアドレス',
     'Password' => 'パスワード',
     'Remember Me' => 'ログイン情報を記憶する',
-    ];
+];
