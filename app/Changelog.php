@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Changelogs extends Model
+class Changelog extends Model
 {
     protected $guarded = array('id');
     
     public static $rules = array(
         'profile_id' => 'required',
-        'edited_at' => 'required',
+        'edited_at' =>'required',
         );
 }

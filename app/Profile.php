@@ -18,8 +18,8 @@ class Profile extends Model
      
     //  8/19追記
     // profileモデルに関連付けする
-    public function changelog()
+    public function changelogs()
     {
-        return $this->hasmany('App\Chagelogs');
+        return $this->hasmany('App\Chagelog');
     }
 }

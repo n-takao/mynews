@@ -13,7 +13,7 @@ class CreateChangelogTable extends Migration
      */
     public function up()
     {
-        Schema::create('_changelog', function (Blueprint $table) {
+        Schema::create('changelogs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('profile_id');
             $table->string('edited_at');
@@ -30,6 +30,6 @@ class CreateChangelogTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_changelog');
+        Schema::dropIfExists('changelogs');
     }
 }

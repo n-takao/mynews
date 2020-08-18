@@ -9,7 +9,7 @@ use App\Profile;
 
 // 8/18追記
 
-use App\Changelogs;
+use App\Changelog;
 use Carbon\Carbon;
 
 class ProfileController extends Controller
@@ -73,6 +73,7 @@ class ProfileController extends Controller
   public function update(Request $request)
   {
       // Validationをかける
+    //   下記課題用8/18に追記　
       $this->validate($request, profile::$rules);
       $profile = Profile::find($request->id);
       $profile_form = $request->all();
@@ -91,11 +92,11 @@ class ProfileController extends Controller
       
       $profile->fill($profile_form)->save();
       
-    //   8/18追記
-      $changelog = new Changelogs;
-      $changelog->profile_id = $profile->id;
-      $changelog->edited_at = Carbon::now();
-      $changelog->save();
+    //   下記課題用8/18追記
+       $changelogs = new Changelog;
+       $changelogs->profile_id = $profile->id;
+       $changelogs->edited_at = Carbon::now();
+       $changelogs->save();
       
     //   News Modelからデータを取得する
       $profile = Profile::find($request->id);
