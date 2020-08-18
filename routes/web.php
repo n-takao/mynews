@@ -26,6 +26,8 @@ Route::group(['prefix' => 'admin'], function() {
     Route::post('profile/create', 'Admin\ProfileController@create')->middleware('auth');#課題
     Route::get('profile/edit','Admin\ProfileController@edit')->middleware('auth');
     Route::post('profile/edit', 'Admin\ProfileController@edit')->middleware('auth');#課題
+    Route::post('profile/edit', 'Admin\ProfileController@update')->middleware('auth'); // 追記8/17
+
 });
 
   
