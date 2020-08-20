@@ -22,11 +22,13 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('news/edit', 'Admin\NewsController@edit')->middleware('auth');#追記8/13
     Route::post('news/edit', 'Admin\NewsController@update')->middleware('auth');#追記8/13
     Route::get('news/delete', 'Admin\NewsController@delete')->middleware('auth');
+    // 
     Route::get('profile/create','Admin\ProfileController@add')->middleware('auth');
     Route::post('profile/create', 'Admin\ProfileController@create')->middleware('auth');#課題
     Route::get('profile/edit','Admin\ProfileController@edit')->middleware('auth');
-    Route::post('profile/edit', 'Admin\ProfileController@edit')->middleware('auth');#課題
     Route::post('profile/edit', 'Admin\ProfileController@update')->middleware('auth'); // 追記8/17
+    // 以下8/20
+    Route::get('/', 'NewsController@index');
 
 });
 
@@ -35,26 +37,3 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

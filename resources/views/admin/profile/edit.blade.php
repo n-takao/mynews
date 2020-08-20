@@ -79,7 +79,7 @@
                     <div class="col-md-4 mx-auto">
                         <h2>更新履歴</h2>
                         <ul class="list-group">
-                            @if ($profile_form-changelogs !=NULL)
+                            @if ($profile_form->changelogs !=NULL)
                              @foreach ($profile_form->changelogs as $changelog)
                               <li class="list-group-item">{{ $changelog->edited_at }}</li>
                              @endforeach

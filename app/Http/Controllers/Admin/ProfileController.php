@@ -92,28 +92,12 @@ class ProfileController extends Controller
       
       $profile->fill($profile_form)->save();
       
-    //   下記課題用8/18追記
-       $changelogs = new Changelog;
-       $changelogs->profile_id = $profile->id;
-       $changelogs->edited_at = Carbon::now();
-       $changelogs->save();
+      //   下記課題用8/18追記
+      $changelogs = new Changelog;
+      $changelogs->profile_id = $profile->id;
+      $changelogs->edited_at = Carbon::now();
+      $changelogs->save();
       
-    //   News Modelからデータを取得する
-      $profile = Profile::find($request->id);
-    //   送信されてきたフォームデータを格納する
-       $profile_form = $request->all();
-       if (isset($profile_form['image'])) {
-         $path = $request->file('image')->store('public/image');
-         $profile->image_path = basename($path);
-         unset($profile_form['image']);
-       } elseif (isset($request->remove)) {
-         $profile->image_path = null;
-         unset($profile_form['remove']);
-         unset($profile_form['_token']);
-
-    //   該当するデータを上書きして保存する
-      $profile->fill($profile_form)->save();
-       }
-      return redirect('admin/profile');
-       }
+      return redirect('admin/profile/edit?id='.$profile->id);
+    }
 }
