@@ -13,7 +13,7 @@
 // Route::get('   /     ','    \AAAcontroller@bbb');
 // Route::get('/', function () {
     // return view('welcome');
-//  });
+//  })コメントｱｳﾄ
  
 Route::group(['prefix' => 'admin'], function() {
     Route::get('news/create', 'Admin\NewsController@add')->middleware('auth');
