@@ -3,25 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use illuminate\Support\Facades\HTML;
+use Illuminate\Support\Facades\HTML;
 
-// 8/19
+// 追記
 use App\News;
-
 
 class NewsController extends Controller
 {
-     public function index(Request $riquest)
-     {
-         $posts = News::all()->sortByDesc('updated_at');
-         
-         if (count($posts)>0) {
+    public function index(Request $request)
+    {
+        $posts = News::all()->sortByDesc('updated_at');
 
-         }else{
-             $headline = null;
-         }
-          // news/index.blade.php ファイルを渡している
+        if (count($posts) > 0) {
+            $headline = $posts->shift();
+        } else {
+            $headline = null;
+        }
+
+        // news/index.blade.php ファイルを渡している
         // また View テンプレートに headline、 posts、という変数を渡している
         return view('news.index', ['headline' => $headline, 'posts' => $posts]);
-     }
+    }
 }

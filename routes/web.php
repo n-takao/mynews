@@ -11,10 +11,10 @@
 |
 */
 // Route::get('   /     ','    \AAAcontroller@bbb');
-
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+    // return view('welcome');
+//  });
+ 
 Route::group(['prefix' => 'admin'], function() {
     Route::get('news/create', 'Admin\NewsController@add')->middleware('auth');
     Route::post('news/create', 'Admin\NewsController@create')->middleware('auth'); 
@@ -27,13 +27,12 @@ Route::group(['prefix' => 'admin'], function() {
     Route::post('profile/create', 'Admin\ProfileController@create')->middleware('auth');#課題
     Route::get('profile/edit','Admin\ProfileController@edit')->middleware('auth');
     Route::post('profile/edit', 'Admin\ProfileController@update')->middleware('auth'); // 追記8/17
-    // 以下8/20
-    Route::get('/', 'NewsController@index');
+    
+    
 
 });
 
-  
+
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/home', 'HomeController@index')->name('home'); 
+Route::get('/', 'NewsController@index');  
