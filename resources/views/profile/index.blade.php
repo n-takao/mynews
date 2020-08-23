@@ -1,4 +1,15 @@
-@extends('layouts.front')
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf=8">
+        <meta http-equiv="x-ua-Compayible" content="IE=sdge">
+        <meta name="viewport" content="width=device-width,inital-scale=1">
+        
+        
+        <title>プロフィールの作成画面</title>
+    </head>
+   <body>
+  @extends('layouts.front')
 
 @section('content')
     <div class="container">
@@ -37,11 +48,19 @@
                                     {{ $post->updated_at->format('Y年m月d日') }}
                                 </div>
                                 <div class="title">
-                                    {{ str_limit($post->title, 150) }}
+                                    {{ str_limit($post->name, 150) }}
+                                </div>
+                                
+                                <div class="body mt-3">
+                                    {{ str_limit($post->gender, 150) }}
                                 </div>
                                 <div class="body mt-3">
-                                    {{ str_limit($post->body, 1500) }}
+                                    {{ str_limit($post->hobby, 200) }}
                                 </div>
+                                <div class="body mt-3">
+                                    {{ str_limit($post->introduction, 1500) }}
+                                </div>
+                                
                             </div>
                             <div class="image col-md-6 text-right mt-4">
                                 @if ($post->image_path)
